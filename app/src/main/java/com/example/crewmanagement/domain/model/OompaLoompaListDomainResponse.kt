@@ -1,10 +1,9 @@
 package com.example.crewmanagement.domain.model
 
-import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class OompaLoompaListDomainResponse(
-    private val current: Int?,
-    private val total: Int?,
-    private val results: List<OompaLoompaDomain>
-) {
-}
+    val current: Int?,
+    val total: Int?,
+    val results: List<OompaLoompaDomain>
+) : Serializable

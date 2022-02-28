@@ -4,11 +4,22 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import com.example.crewmanagement.R
+import com.example.crewmanagement.databinding.ActivitySplashBinding
+import com.example.crewmanagement.databinding.ItemOompaloompasListBinding
 import com.example.crewmanagement.presentation.base.BaseActivity
 import com.example.crewmanagement.presentation.ui.main.MainActivity
 
 class SplashActivity : BaseActivity() {
-    override val layoutId: Int = R.layout.activity_splash
+
+    private lateinit var binding: ActivitySplashBinding
+
+    override fun observeViewModel() {}
+
+    override fun initViewBinding() {
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

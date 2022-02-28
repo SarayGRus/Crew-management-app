@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- margin -->
+    <dimen name="margin_xs">8dp</dimen>
+    <dimen name="margin_s">16dp</dimen>
+    <dimen name="margin_m">28dp</dimen>
+
+    <!-- text size -->
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+
+    <!-- elevation -->
+    <dimen name="elevation_s">4dp</dimen>
+    <dimen name="elevation_m">8dp</dimen>
+
+    <!-- main screen -->
+    <dimen name="main_padding_vertical">@dimen/margin_m</dimen>
+    <dimen name="main_padding_horizontal">@dimen/margin_s</dimen>
+    <dimen name="item_padding">@dimen/margin_xs</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
+
+    <dimen name="screen_title_size">@dimen/text_size_22</dimen>
+</resources>

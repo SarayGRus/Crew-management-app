@@ -1,10 +1,11 @@
 package com.example.crewmanagement.domain.model
 
-import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class OompaLoompaDomain(
     val firstName: String?,
     val lastName: String?,
+    val description: String?,
     val favorite: FavoriteDomain?,
     val gender: String?,
     val image: String?,
@@ -15,6 +16,4 @@ data class OompaLoompaDomain(
     val height: Int?,
     val id: Int?
 
-) {
-
-}
+): Serializable

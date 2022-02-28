@@ -10,6 +10,6 @@ interface CrewManagementApi {
     @GET("oompa-loompas")
     suspend fun getAll(): OompaLoompaListDataResponse
 
-    @GET("oompa-loompas/")
+    @GET("oompa-loompas/{id}")
     suspend fun getOompaLoompaDetail(@Path("id") id: Int): OompaLoompaData
 }

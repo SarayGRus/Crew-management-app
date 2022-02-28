@@ -4,6 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.main.MainActivity">
+    tools:context=".presentation.ui.main.MainActivity"
+    android:paddingVertical="@dimen/main_padding_vertical"
+    android:paddingHorizontal="@dimen/main_padding_horizontal">
+
+    <TextView
+        android:id="@+id/tvMainScreenTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/main_title"
+        android:textColor="@color/screen_title_color"
+        android:textSize="@dimen/screen_title_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivMainClose"/>
+
+    <ImageView
+        android:id="@+id/ivMainClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMainScreenTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMainScreenTitle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMainOompaLoompasList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainScreenTitle"
+        tools:listitem="@layout/item_oompaloompas_list"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

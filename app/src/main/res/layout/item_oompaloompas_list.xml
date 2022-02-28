@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_m"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/margin_xs">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/item_padding">
+
+            <ImageView
+                android:id="@+id/ivOompaLoompasListItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvOompaLoompasListItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="@dimen/text_size_18"
+                android:layout_marginStart="@dimen/margin_s"
+                android:text="Marcy Karadzas"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/ivOompaLoompasListItem"
+                app:layout_constraintTop_toTopOf="@+id/ivOompaLoompasListItem" />
+
+            <TextView
+                android:id="@+id/tvOompaLoompasListItemAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginStart="@dimen/margin_s"
+                android:text="21 años"
+                app:layout_constraintTop_toBottomOf="@+id/tvOompaLoompasListItemName"
+                app:layout_constraintStart_toEndOf="@+id/ivOompaLoompasListItem"/>
+
+            <TextView
+                android:id="@+id/tvOompaLoompasListItemGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginStart="@dimen/margin_s"
+                android:text="Sexo: F"
+                app:layout_constraintTop_toTopOf="@+id/tvOompaLoompasListItemAge"
+                app:layout_constraintBottom_toBottomOf="@+id/tvOompaLoompasListItemAge"
+                app:layout_constraintStart_toEndOf="@+id/tvOompaLoompasListItemAge" />
+
+            <TextView
+                android:id="@+id/tvOompaLoompasListItemCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginStart="@dimen/margin_s"
+                android:text="Loompalandia"
+                app:layout_constraintTop_toBottomOf="@+id/tvOompaLoompasListItemGender"
+                app:layout_constraintStart_toEndOf="@+id/ivOompaLoompasListItem"/>
+
+            <TextView
+                android:id="@+id/tvOompaLoompasListItemProfession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginStart="@dimen/margin_s"
+                android:text="Developer"
+                app:layout_constraintTop_toBottomOf="@+id/tvOompaLoompasListItemCountry"
+                app:layout_constraintStart_toEndOf="@+id/ivOompaLoompasListItem"/>
+
+            <TextView
+                android:id="@+id/tvOompaLoompasListItemEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginStart="@dimen/margin_s"
+                android:text="mkaradzas1@visualengin.com"
+                android:autoLink="email"
+                app:layout_constraintBottom_toBottomOf="@+id/ivOompaLoompasListItem"
+                app:layout_constraintStart_toEndOf="@+id/ivOompaLoompasListItem"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

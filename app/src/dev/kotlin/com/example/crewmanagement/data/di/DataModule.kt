@@ -1,14 +1,8 @@
 package com.example.crewmanagement.data.di
 
 import com.example.crewmanagement.domain.repository.NetworkRepository
-import org.kodein.di.Kodein
-import org.kodein.di.generic.bind
-import org.kodein.di.generic.singleton
+import org.koin.dsl.module
 
-fun generateDataModule() = Kodein.Module(name = "DataModule") {
-
-    bind<NetworkRepository>() with singleton {
-        com.example.crewmanagement.data.repository.NetworkRepository(
-        )
-    }
+val generateDataModule = module {
+    single<NetworkRepository>() { com.example.crewmanagement.data.repository.NetworkRepository()}
 }

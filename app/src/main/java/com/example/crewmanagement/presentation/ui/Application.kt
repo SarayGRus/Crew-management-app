@@ -1,26 +1,27 @@
 package com.example.crewmanagement.presentation.ui
 
-import com.example.crewmanagement.data.di.generateDataModule
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
 import android.app.Application
+import com.example.crewmanagement.data.di.generateDataModule
 import com.example.crewmanagement.presentation.di.generateApplicationModule
-import org.kodein.di.android.x.androidXModule
+import com.example.crewmanagement.presentation.di.injectionActivityModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 
-class Application: Application(), KodeinAware {
+class Application : Application() {
 
-    override val kodein: Kodein = Kodein {
-        injectAppModule(this)?.let {
-            import(it)
-        }?: androidXModule(this@Application)
-    }
-
-     override fun onCreate() {
+    override fun onCreate() {
         super.onCreate()
-    }
-
-     fun injectAppModule(kodein: Kodein.MainBuilder): Kodein.Module {
-        kodein.import(generateDataModule())
-        return generateApplicationModule(this)
+        startKoin {
+            androidLogger()
+            androidContext(this@Application)
+            modules(
+                listOf(
+                    injectionActivityModule,
+                    generateApplicationModule,
+                    generateDataModule
+                )
+            )
+        }
     }
 }

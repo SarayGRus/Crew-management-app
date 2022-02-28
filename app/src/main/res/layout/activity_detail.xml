@@ -9,8 +9,8 @@
     android:paddingHorizontal="@dimen/main_padding_horizontal">
 
     <TextView
-        android:id="@+id/tvMainScreenTitle"
-        android:layout_width="match_parent"
+        android:id="@+id/tvDetailScreenTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:text="@string/main_title"
@@ -20,16 +20,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMainOompaLoompasList"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_m"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/ivDetailClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetailScreenTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMainScreenTitle"
-        tools:listitem="@layout/item_oompaloompas_list"/>
+        app:layout_constraintTop_toTopOf="@+id/tvDetailScreenTitle" />
 
     <FrameLayout
         android:id="@+id/pbLoading"
@@ -46,4 +44,247 @@
             android:layout_gravity="center"
             android:indeterminate="true"/>
     </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailScreenTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvOompaLoompasItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_xs"
+                android:elevation="@dimen/elevation_m"
+                app:cardBackgroundColor="@color/purple_light"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/item_padding">
+
+                    <ImageView
+                        android:id="@+id/ivOompaLoompasListItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_launcher_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/margin_m"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivOompaLoompasListItem">
+
+                        <TextView
+                            android:id="@+id/tvOompaLoompasListItemName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Marcy Karadzas"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_18"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvOompaLoompasListItemAge"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_xs"
+                            android:layout_marginEnd="@dimen/margin_xs"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="21 años"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintEnd_toStartOf="@+id/tvOompaLoompasListItemGender"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvOompaLoompasListItemName" />
+
+                        <TextView
+                            android:id="@+id/tvOompaLoompasListItemGender"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_xs"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Sexo: F"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvOompaLoompasListItemAge"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvOompaLoompasListItemAge"
+                            app:layout_constraintTop_toTopOf="@+id/tvOompaLoompasListItemAge" />
+
+                        <TextView
+                            android:id="@+id/tvOompaLoompasListItemCountry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_xs"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Loompalandia"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvOompaLoompasListItemGender" />
+
+                        <TextView
+                            android:id="@+id/tvOompaLoompasListItemProfession"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_xs"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Developer"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvOompaLoompasListItemCountry" />
+
+                        <TextView
+                            android:id="@+id/tvOompaLoompasListItemEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_xs"
+                            android:autoLink="email"
+                            android:fontFamily="sans-serif-light"
+                            android:text="mkaradzas1@visualengin.com"
+                            android:textAlignment="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvOompaLoompasListItemProfession" />
+
+                        <View
+                            android:id="@+id/separatorDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/detail_separator_height"
+                            android:layout_marginTop="@dimen/margin_s"
+                            android:background="@color/purple_200"
+                            app:layout_constraintTop_toBottomOf="@+id/tvOompaLoompasListItemEmail" />
+
+                        <TextView
+                            android:id="@+id/tvDetailDescriptionTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_s"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/oompa_loompa_detail_description"
+                            android:textAllCaps="true"
+                            android:textColor="@color/purple_700"
+                            android:textSize="@dimen/text_size_16"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/separatorDetail" />
+
+                        <TextView
+                            android:id="@+id/tvDetailDescriptionValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_xs"
+                            android:fontFamily="sans-serif-light"
+                            android:textSize="@dimen/text_size_14"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDetailDescriptionTitle" />
+
+                        <!--<Button
+                            android:id="@+id/btnFavoritesDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:text="@string/oompa_loompa_detail_show_more"
+                            android:layout_marginTop="@dimen/margin_m"
+                            android:layout_marginBottom="@dimen/margin_xs"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDetailDescriptionValue"/>-->
+
+                        <View
+                            android:id="@+id/separatorFavoritesDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/detail_separator_height"
+                            android:layout_marginTop="@dimen/margin_s"
+                            android:background="@color/purple_200"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDetailDescriptionValue" />
+
+                        <TextView
+                            android:id="@+id/tvDetailFavoritesTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_s"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/oompa_loompa_detail_favorite"
+                            android:textAllCaps="true"
+                            android:textColor="@color/purple_700"
+                            android:textSize="@dimen/text_size_16"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/separatorFavoritesDetail" />
+
+                        <ImageView
+                            android:id="@+id/ivDetailFavoriteColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_color"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvDetailFavoriteColor"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvDetailFavoriteColor" />
+
+                        <TextView
+                            android:id="@+id/tvDetailFavoriteColor"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_xs"
+                            android:layout_marginTop="@dimen/margin_xs"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="@string/oompa_loompa_detail_favorite_color"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivDetailFavoriteColor"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDetailFavoritesTitle" />
+
+                        <ImageView
+                            android:id="@+id/ivDetailFavoriteFood"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_food"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvDetailFavoriteFood"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvDetailFavoriteFood" />
+
+                        <TextView
+                            android:id="@+id/tvDetailFavoriteFood"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_xs"
+                            android:layout_marginTop="@dimen/margin_s"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="@string/oompa_loompa_detail_favorite_food"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivDetailFavoriteFood"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDetailFavoriteColor" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

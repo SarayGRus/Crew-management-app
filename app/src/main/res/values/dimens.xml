@@ -6,6 +6,8 @@
     <dimen name="margin_m">28dp</dimen>
 
     <!-- text size -->
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
     <dimen name="text_size_18">18sp</dimen>
     <dimen name="text_size_22">22sp</dimen>
 
@@ -18,6 +20,13 @@
     <dimen name="main_padding_horizontal">@dimen/margin_s</dimen>
     <dimen name="item_padding">@dimen/margin_xs</dimen>
     <dimen name="card_corner_radius">10dp</dimen>
+
+    <!-- detail screen -->
+    <dimen name="detail_padding_vertical">@dimen/margin_m</dimen>
+    <dimen name="detail_padding_horizontal">@dimen/margin_s</dimen>
+    <dimen name="detail_padding">@dimen/margin_xs</dimen>
+    <dimen name="detail_card_corner_radius">10dp</dimen>
+    <dimen name="detail_separator_height">2dp</dimen>
 
     <dimen name="screen_title_size">@dimen/text_size_22</dimen>
 </resources>

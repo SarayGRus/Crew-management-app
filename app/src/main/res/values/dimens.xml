@@ -17,6 +17,7 @@
     <dimen name="main_padding_vertical">@dimen/margin_m</dimen>
     <dimen name="main_padding_horizontal">@dimen/margin_s</dimen>
     <dimen name="item_padding">@dimen/margin_xs</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
 
     <dimen name="screen_title_size">@dimen/text_size_22</dimen>
 </resources>

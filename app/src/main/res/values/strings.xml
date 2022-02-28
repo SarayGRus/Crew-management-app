@@ -3,4 +3,7 @@
 
     <!-- MAIN SCREEN -->
     <string name="main_title">Oompa Loompa\'s management</string>
+    <string name="oompa_loompa_item_name">%1$s %2$s</string>
+    <string name="oompa_loompa_item_age">%1$s años</string>
+    <string name="oompa_loompa_item_gender">Género: %1$s</string>
 </resources>

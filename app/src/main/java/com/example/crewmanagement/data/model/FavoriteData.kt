@@ -1,6 +1,7 @@
 package com.example.crewmanagement.data.model
 
 import com.example.crewmanagement.domain.model.FavoriteDomain
+import com.example.crewmanagement.utils.NOT_AVAILABLE
 import com.example.crewmanagement.utils.checknull
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
@@ -17,8 +18,8 @@ data class FavoriteData(
 ) : Serializable {
     fun toDomainModel(): FavoriteDomain =
         FavoriteDomain(
-            color = color?.checknull(),
-            food = food?.checknull(),
+            color = color?.checknull(NOT_AVAILABLE),
+            food = food?.checknull(NOT_AVAILABLE),
             randomString = randomString?.checknull(),
             song = randomString?.checknull()
         )

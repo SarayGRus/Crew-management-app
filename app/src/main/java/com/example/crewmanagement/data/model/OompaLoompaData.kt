@@ -1,6 +1,7 @@
 package com.example.crewmanagement.data.model
 
 import com.example.crewmanagement.domain.model.OompaLoompaDomain
+import com.example.crewmanagement.utils.NOT_AVAILABLE
 import com.example.crewmanagement.utils.checknull
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
@@ -10,6 +11,8 @@ data class OompaLoompaData(
     private val firstName: String?,
     @SerializedName("last_name")
     private val lastName: String?,
+    @SerializedName("description")
+    private val description: String?,
     @SerializedName("favorite")
     private val favorite: FavoriteData?,
     @SerializedName("gender")
@@ -34,6 +37,7 @@ data class OompaLoompaData(
         OompaLoompaDomain(
             firstName = firstName?.checknull(),
             lastName = lastName?.checknull(),
+            description = description.checknull(NOT_AVAILABLE),
             favorite = favorite?.toDomainModel(),
             gender = gender?.checknull(),
             image = image?.checknull(),

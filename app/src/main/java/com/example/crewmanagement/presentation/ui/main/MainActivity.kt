@@ -1,5 +1,6 @@
 package com.example.crewmanagement.presentation.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -9,12 +10,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.crewmanagement.databinding.ActivityMainBinding
+import com.example.crewmanagement.domain.model.OompaLoompaDomain
 import com.example.crewmanagement.domain.model.OompaLoompaListDomainResponse
 import com.example.crewmanagement.presentation.base.BaseActivity
 import com.example.crewmanagement.presentation.base.FailureResource
 import com.example.crewmanagement.presentation.base.LoadingResource
 import com.example.crewmanagement.presentation.base.SuccessResource
+import com.example.crewmanagement.presentation.ui.detail.DetailActivity
+import com.example.crewmanagement.utils.OOMPA_LOOMPA_ID
 import com.example.crewmanagement.utils.SingleEvent
+import com.example.crewmanagement.utils.observeEvent
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,6 +32,7 @@ class MainActivity : BaseActivity() {
     override fun observeViewModel() {
         getAllObserver()
         showToastObserver(mainActivityViewModel.showToastLiveData)
+        observeEvent(mainActivityViewModel.openDetailLiveData, ::navigateToDetailScreen)
     }
 
     override fun initViewBinding() {
@@ -94,6 +100,15 @@ class MainActivity : BaseActivity() {
                 }
                 is FailureResource -> status.error.let { it -> mainActivityViewModel.showToastMessage(it) }
             }
+        }
+    }
+
+    private fun navigateToDetailScreen(navigateEvent: SingleEvent<OompaLoompaDomain>) {
+        navigateEvent.getContentIfNotHandled()?.let {
+            val intent = Intent(this, DetailActivity::class.java).apply {
+                putExtra(OOMPA_LOOMPA_ID, it)
+            }
+            startActivity(intent)
         }
     }
 

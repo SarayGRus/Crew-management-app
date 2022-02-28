@@ -7,5 +7,4 @@ data class FavoriteDomain(
     val food: String?,
     val randomString: String?,
     val song: String?
-) : Serializable {
-}
+) : Serializable

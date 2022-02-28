@@ -9,8 +9,8 @@ import com.example.crewmanagement.domain.model.OompaLoompaDomain
 class OompaLoompasAdapter(private val mainActivityViewModel: MainActivityViewModel, private val oompaLoompas: List<OompaLoompaDomain>) : RecyclerView.Adapter<OompaLoompaViewHolder>() {
 
     private val onItemClickListener: RecyclerItemListener = object : RecyclerItemListener {
-        override fun onItemSelected(recipe: OompaLoompaDomain) {
-            //mainActivityViewModel.openRecipeDetails(recipe)
+        override fun onItemSelected(oompaLoompa: OompaLoompaDomain) {
+            mainActivityViewModel.openOompaLoompaDetail(oompaLoompa)
         }
     }
 
